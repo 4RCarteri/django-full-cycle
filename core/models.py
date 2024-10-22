@@ -9,8 +9,8 @@ class Video(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     published_at = models.DateTimeField(verbose_name='Publicado em')
     is_published = models.BooleanField(default=False, verbose_name='Publicado')
-    num_likes = models.IntegerField(default=0, verbose_name='Likes')
-    num_views = models.IntegerField(default=0, verbose_name='Visualizações')
+    num_likes = models.IntegerField(default=0, verbose_name='Likes', editable=False)
+    num_views = models.IntegerField(default=0, verbose_name='Visualizações', editable=False)
     tags = models.ManyToManyField('Tag', verbose_name='Tags')
 
     class Meta:
