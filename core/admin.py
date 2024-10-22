@@ -8,6 +8,7 @@ class VideoAdmin(admin.ModelAdmin):
     # lookup
     search_fields = ('title', 'description', 'tags__name')
     list_filter = ('is_published', 'tags')
+    date_hierarchy = 'published_at'
 
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Tag)
