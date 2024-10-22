@@ -7,7 +7,7 @@ class Video(models.Model):
     thumbnail = models.ImageField(upload_to='thumbnails/')
     video = models.FileField(upload_to='videos/', verbose_name='Vídeo')
     slug = models.SlugField(max_length=100, unique=True)
-    published_at = models.DateTimeField(verbose_name='Publicado em')
+    published_at = models.DateTimeField(verbose_name='Publicado em', editable=False)
     is_published = models.BooleanField(default=False, verbose_name='Publicado')
     num_likes = models.IntegerField(default=0, verbose_name='Likes', editable=False)
     num_views = models.IntegerField(default=0, verbose_name='Visualizações', editable=False)
