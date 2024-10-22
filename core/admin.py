@@ -7,6 +7,7 @@ class VideoAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_published', 'published_at', 'num_likes', 'num_views')
     # lookup
     search_fields = ('title', 'description', 'tags__name')
+    list_filter = ('is_published', 'tags')
 
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Tag)
