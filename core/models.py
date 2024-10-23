@@ -13,6 +13,7 @@ class Video(models.Model):
     num_likes = models.IntegerField(default=0, verbose_name='Likes', editable=False)
     num_views = models.IntegerField(default=0, verbose_name='Visualizações', editable=False)
     tags = models.ManyToManyField('Tag', verbose_name='Tags')
+    author = models.ForeignKey('auth.User', on_delete=models.PROTECT, verbose_name='Autor', editable=False)
 
     class Meta:
         verbose_name = 'Vídeo'
